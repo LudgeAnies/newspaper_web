@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="css/home.css">
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
     {% if user.is_authenticated %}
-        Hi, {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Выйти</a></p>
+        <div class="add-row">Hi, {{ user.username }}!
+            <p><a href="{% url 'logout' %}">Выйти</a></p></div>
     {% else %}
         <p>Вы не вошли в систему.</p>
         <a href="{% url 'login' %}">Войти</a>
